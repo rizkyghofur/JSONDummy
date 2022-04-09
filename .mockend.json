@@ -3,24 +3,36 @@
     "name": { 
       "regexp": "[A-Z][a-z]{5,10}"
     },
+    "email": {
+      "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+    },
     "username": {
       "string": {}
     },
     "password": {
-      "string":{}
+      "string": {}
     },
     "photo": {
     "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
     }
   },
   "Post": {
-    "title": { "string": {} },
+    "title": {
+      "string": {}
+    },
+    "description": {
+      "loremSentences": {
+        "minLength": 100, "maxLength": 200 
+      }
+    },
     "comments": {
       "hasMany": "Comment"
     }
   },
   "Comment": {
-    "body": { "string": {} },
+    "body": {
+      "string": {}
+    },
     "post": {
       "belongsTo": "Post"
     }
